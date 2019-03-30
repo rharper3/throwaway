@@ -1,0 +1,569 @@
+/*Utility Class*/
+.hide
+{
+	display: none;
+}
+
+/* General rules - scales images, videos to size of container */
+img, embed, object, video {
+  max-width: 100%; 
+}
+
+
+/*switch box model*/
+html {
+  box-sizing: border-box; 
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+/*Fix for scaling of images IE*/
+img {
+  -ms-interpolation-mode: bicubic; 
+}
+
+/*Fonts*/
+@font-face {
+font-family: 'lustriaregular';
+src: url('../fonts/lustria-regular-webfont.eot');
+src: url('../fonts/lustria-regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('../fonts/lustria-regular-webfont.woff') format('woff'),
+url('../fonts/lustria-regular-webfont.ttf') format('truetype'),
+url('../fonts/lustria-regular-webfont.svg#lustriaregular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'latoregular';
+src: url('../fonts/lato-regular-webfont.eot');
+src: url('../fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('../fonts/lato-regular-webfont.woff') format('woff'),
+url('../fonts/lato-regular-webfont.ttf') format('truetype'),
+url('../fonts/lato-regular-webfont.svg#latoregular') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+/*General Rules for Elements*/
+
+body
+{
+	font-family: 'latoregular', Helvetica, Arial, sans-serif;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+
+a 
+{ 
+  color:#000; 
+  text-decoration: none;  
+  transition:all .1s linear 0s;
+}
+
+h2, h3
+{
+	font-family: 'lustriaregular', Times, "Times New Roman", serif;
+	color: #215445;
+}
+
+.container {
+  margin: 0px auto;
+  padding: 0px 15px 0 15px;
+  max-width: 1200px; 
+}
+
+/*Header and Nav*/
+
+#mainHeader
+{
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+/*want to push burger menu to right, set to flex*/
+#mainNav
+{
+  display: flex;
+  flex-direction: column;
+}
+
+#mainNav button
+{
+  background: url(../img/burger.svg) center no-repeat;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  transition: all 400ms ease;
+  /*okay so lets push it to right*/
+  margin-left: auto;
+}
+
+#mainNav button.expanded
+{
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+#mainNav li a
+{
+  display: block;
+  padding: 10px 0 10px 0; /*trbl*/
+  color: #8ea76d;
+  text-align: center;
+}
+
+#mainNav li
+{
+  border-bottom: 1px solid #efefef;
+}
+
+#mainNav li:first-child
+{
+  border-top: 1px solid #efefef;
+}
+
+#mainNav li:last-child
+{
+  margin-bottom: 10px;
+}
+
+#searchForm
+{
+  margin-top: 20px;
+}
+
+#mainNav input[type=text]
+{
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid #cacaca;
+  border-radius: 3px 0px 3px 0px;
+  background-color: #fefefe;
+  box-shadow: inset 0 1px 2px rgba(10,10,10, 0.1);
+  color: #0a0a0a;
+}
+
+#mainNav input[type=submit]
+{
+  height: 40px;
+  width: 100px;
+  border-radius: 0 3px 3px 0;
+  text-align: center;
+  font-size: 14px;
+  background-color: #8fa771;
+  color: #fefefe;
+  border: 0;
+}
+
+#searchCon
+{
+  display: flex;
+  flex-direction: row;
+}
+
+#burgerCon
+{
+  margin-top: 20px;
+  display: none;
+}
+
+#burgerCon.slideToggle
+{
+  display: block;
+}
+
+#wollastonLogo
+{
+  display: block;
+  margin: 0 auto;
+  max-width: 120px;
+}
+
+#pano
+{
+  background-image: url(../img/panoramic_bg_3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  margin-bottom: 30px;
+  padding-top: 15px;
+}
+
+#infoFrost
+{
+  background: rgba(255,255,255,0.8);
+  padding: 10px 20px 0 20px;
+  height: 270px;
+}
+
+#infoFrost h2
+{
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+#infoFrost h3
+{
+  font-size: 14px;
+  letter-spacing: .25px; 
+  line-height: 18px;
+}
+
+#infoFrost p
+{
+  color: #090909;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  line-height: 16px;
+}
+
+#bookNow
+{
+  display: block;
+  width: 120px;
+  background-color: #8fa771;
+  padding: 15px 0;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-family: 'lustriaregular', Times, serif;
+}
+
+#bookNow:hover
+{
+  background-color: #315445;
+}
+
+/*Service Area*/
+
+#serviceCon
+{
+  margin-bottom: 10px;
+}
+
+.icon
+{
+  float: left;
+  max-width: 70px;
+  margin-right: 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.services h2
+{
+  font-size: 24px;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.services h3
+{
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.services p
+{
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.services a
+{
+  color: #8fa771;
+}
+
+.services
+{
+  margin-bottom: 40px;
+  padding-top: 1px;
+}
+
+/*Extras Area*/
+
+#extraCon
+{
+  margin-bottom: 60px;
+}
+
+.extrasImg
+{
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.extras h2
+{
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.extras p
+{
+color: #333;
+font-size: 14px;
+line-height: 22px;
+}
+
+/*footer*/
+
+#footerCon
+{
+  background-color: #8fa771;
+  height: 70px;
+}
+
+#footerNav
+{
+  display: none;
+}
+
+#backBut
+{
+  color: #fff;
+  font-size: 16px;
+  line-height: 70px;
+}
+
+#backBut:hover
+{
+  color: #333;
+
+}
+
+
+@media screen and (min-width: 400px) {
+  #infoFrost h2
+  {
+    font-size: 24px;
+  }
+
+  #infoFrost h3
+  {
+    font-size: 18px
+  }
+
+  #infoFrost p
+  {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width:620px) {
+  #infoFrost h2
+  {
+    font-size: 32px;
+  }
+
+  #infoFrost h3
+  {
+    font-size: 20px;
+  }
+
+  #infoFrost p
+  {
+    width: 60%;
+  }
+
+}
+
+@media screen and (min-width: 648px) {
+  #serviceCon
+  {
+    display: flex;
+  }
+
+  .services
+  {
+    margin-right: 20px;
+  }
+
+  .services:last-child
+  {
+    margin-right: 0;
+  }
+
+  .services h2
+  {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .services h3
+  {
+    font-size: 10px;
+  }
+
+  .icon
+  {
+    margin-right: 10px;
+    max-width: 50px;
+  }
+
+  .services p
+  {
+    text-align: left;
+  }
+
+  #pano{
+    background-image: url(../img/panoramic_bg_2.jpg);
+  }
+
+  #extraCon
+  {
+    display: flex;
+  }
+
+  #extras:last-child
+  {
+    margin-left: 40px;
+  }
+
+  #backBut
+  {
+    display: none;
+  }
+
+  #footerNav
+  {
+    display: block;
+  }
+
+  #footerCon ul li
+  {
+    display: inline;
+    margin-right: 20px;
+  }
+
+  #footerCon ul li a
+  {
+    color: #fff;
+    line-height: 70px;
+  }
+
+  #footerCon ul li a:hover
+  {
+    color: #333;
+  }
+
+
+}
+
+@media screen and (min-width: 800px) {
+  #infoFrost
+  {
+    background: url(../img/golf_club.png) right no-repeat rgba(255,255,255, 0.8);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #mainHeader
+  {
+    display: flex;
+  }
+
+  #button
+  {
+    display: none;
+  }
+
+  #burgerCon
+  {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #logoCon
+  {
+    order: -1;
+  }
+
+  #mainNav
+  {
+    margin-left: auto;
+  }
+
+  #mainNav li
+  {
+    border-bottom: none;
+    display: inline;
+    margin-left: 20px;
+  }
+
+  #mainNav li:first-child
+  {
+    border-top: none;
+  }
+
+  #mainNav li a
+  {
+    display: inline;
+  }
+
+  #searchForm
+  {
+    order: -1;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+
+  #wollastonLogo
+  {
+    max-width: 160px;
+  }
+
+  #pano{
+    background: url(../img/panoramic_bg_1.jpg) center no-repeat;
+  }
+
+  .icon
+  {
+    max-width: 70px;
+  }
+
+  .services h2
+  {
+    font-size: 24px;
+  }
+
+  .services h3
+  {
+    font-size: 18px;
+  }
+
+  .extrasImg
+  {
+    max-width: 270px;
+    float: left;
+    margin-right: 20px;
+  }
+
+  .extras h2
+  {
+    margin-top: 20px;
+  }
+
+  #infoFrost
+  {
+    max-width: 970px;
+    margin: 0 auto;
+  }
+
+  
+  }
